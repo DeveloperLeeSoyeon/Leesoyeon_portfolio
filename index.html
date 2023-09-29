@@ -36,7 +36,7 @@
             <img class="header__logo__img" src="images/favicon.ico" alt="logo">
             <h1 class="header__logo__title"><a href="#">Soyeon</a></h1>
         </div>
-        <nav>
+        <nav class="header__nav">
            <ul class="header__menu">
             <li><a class="header__menu__item active" href="#home">Home</a></li>
             <li><a class="header__menu__item" href="#about">About</a></li>
@@ -67,7 +67,7 @@
                 <li class="major">
                     <i class="fa-brands fa-html5 major__icon"></i>
                     <p class="major__title">Front-end</p>
-                    <p>HTML, CSS major__icon, Javascript, React, Web API</p>
+                    <p>HTML, CSS major__icon, Javascript React, Web API</p>
                 </li>
                 <li class="major">
                     <i class="fa-solid fa-database major__icon"></i>
@@ -289,36 +289,40 @@
         </section>
         <!--Arrow up-->
         <aside>
-            <a href="#home" title="back to top"><i class="fa-sharp fa-solid fa-arrow-up"></i></a>
+            <a class="arrow-up" href="#home" title="back to top"><i class="fa-sharp fa-solid fa-arrow-up"></i></a>
             <!-- 웹접근성을 위해서 title에 정보넣어주기. 없으면 웹리더기가 못읽음
             a태그에는 가급적 title을 지정해주는 것이 좋음 -->
         </aside>
     </main>
     <!--Footer-->
     <footer id="Contact" class="section">
-        <h2 class="title">Let&#39;s talk</h2>
-        <p class="description">developersoyeon@naver.com</p>
-        <ul>
-            <li>
-                <a 
-                    href="http://github.com/developerLeeSoyeon" 
-                    target="_blank" 
-                    title="my github link"
-                >
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </li>
-            <li>
-                <a 
-                    href="http://github.com/developerLeeSoyeon" 
-                    target="_blank" 
-                    title="my email"
-                >
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </li>
-        </ul>
-        <p>SOYEON LEE - ALL rights reserved</p>
+        <div class="max-container">
+            <h2 class="title">Let&#39;s talk</h2>
+            <p class="description">developersoyeon@naver.com</p>
+            <ul class="contact__links">
+                <li>
+                    <a 
+                        class="contact__link"
+                        href="http://github.com/developerLeeSoyeon" 
+                        target="_blank" 
+                        title="my github link"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        class="contact__link"
+                        href="http://github.com/developerLeeSoyeon" 
+                        target="_blank" 
+                        title="my email"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>SOYEON LEE - ALL rights reserved</p>
+        </div>
     </footer>
 </body>
 </html>
