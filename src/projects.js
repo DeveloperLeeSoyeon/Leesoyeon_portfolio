@@ -35,7 +35,6 @@ function filterProjects(filter) {
     // 애니메이션
     projectContainer.classList.add('anim-out')
 
-
     projects.forEach((project) => {
     if(filter === 'all' || filter === project.dataset.type) {
         project.style.display = 'block';
@@ -48,3 +47,13 @@ function filterProjects(filter) {
         projectContainer.classList.remove('anim-out');
     }, 250);
 }
+
+
+// const observer = new IntersectionObserver(callback);
+
+// // section id 에 따라서 ...?
+// const sections = document.querySelector('.section');
+// sections.forEach((section) => observer.observe(section));
+// function callback {
+//     if()
+// }
