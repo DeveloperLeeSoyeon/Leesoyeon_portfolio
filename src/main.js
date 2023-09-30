@@ -14,7 +14,7 @@ const headerHeight = header.offsetHeight;
 //    스타일링 바꿔주기 -> 헤더의 클래스이름을 다른 클래스이름으로 바꿔주기 -> css에서 지정해주기
 document.addEventListener('scroll', () => {
     // 스크롤되는 y좌표가 headerHeight보다 크다면 다른 스타일링!
-    console.log(window.scrollY);
+
     if(window.scrollY > headerHeight) {
         header.classList.add('header--dark');
     } else {
