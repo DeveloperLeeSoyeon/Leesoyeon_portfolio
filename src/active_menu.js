@@ -14,7 +14,7 @@
         '#about',
         '#skills',
         '#work',
-        '#testimonial',
+        '#career',
         '#contact',
       ];
 

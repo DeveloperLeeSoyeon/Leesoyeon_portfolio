@@ -12,13 +12,16 @@
     /* Colors */
     --color-white: #ffffff;
     --color-black: #050a13;
-    --color-blue: #03e8f9;
+    --color-blue: #051b3d;
     --color-orange: #fd6413;
     --color-gray: #1b1e26;
 
     /* Size */
     --size-max-width: 1200px;
 
+    /* Divider */
+    --divider-single-wave: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" > <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" class="shape-fill"></path> </svg>');
+    --divider-multi-wave: url('data:image/svg+xml;utf8,  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path> <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path> <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path> </svg>');
 
 }
 
@@ -90,7 +93,7 @@ button:focus{
 
 /* Header */
 .header {
-    background-color: transparent;
+    background-color: var(--color-accent);
     position: fixed;
     top: 0;
     width: 100%;
@@ -152,12 +155,31 @@ button:focus{
 
 /* Home */
 #home {
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-text);
     padding: 5rem 1rem;
     padding-top: 7rem;
     text-align: center;
 }
+
+#home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(128% + 1.3px);
+    height: 318px;
+    transform: rotateY(180deg);
+    overflow: hidden;
+    line-height: 0;    
+    display: block;
+    background-color: var(--color-white);
+    mask: var(--divider-single-wave);
+    -webkit-mask: var(--divider-single-wave);
+}
+
+
 
 .home__avatar {
     width: 250px;
@@ -207,6 +229,7 @@ button:focus{
 }
 
 .major {
+    
     background-color: var(--color-primary-variant);
     padding: 2rem 1rem;
     color: var(--color-text);
@@ -256,9 +279,26 @@ button:focus{
 
 /* Skills */
 #skills {
+    position: relative;
     background-color: var(--color-primary-variant);
     color: var(--color-text);
 }
+
+#skills::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% + 1.3px);
+    height: 32px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    background-color: var(--color-primary);
+    mask: var(--divider-multi-wave);
+    -webkit-mask: var(--divider-multi-wave);
+}
+
 
 .skills {
     display: grid;
@@ -318,9 +358,11 @@ button:focus{
 
 /* Work */
 #work {
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-text);
 }
+
 
 .categories {
     display: flex;
@@ -410,7 +452,7 @@ button:focus{
 }
 
 /* 꾸미기용 가상요소! */
-.project__title:after {
+.project__title::after {
     content: '';
     display: block;
     position: relative;
@@ -424,12 +466,12 @@ button:focus{
 }
 
 
-/* Testimonial */
-.testimonials {
+/* Career */
+.careers {
     margin: 3rem;
 }
 
-.testimonial {
+.career {
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -438,23 +480,23 @@ button:focus{
 
 /* nth-child : 몇 번째 child를 선택할 수 있는가 정할 수 있음 
 order는 0부터 시작하므로 1번째로 만들면 오른쪽으로 배치됨.*/
-.testimonial:nth-child(even) .testimonial__img {
+.career:nth-child(even) .career__img {
     order: 1; 
 }
-.testimonial__img {
-    width: 150px;
-    height: 150px;
+.career__img {
+    width: 200px;
+    height: 200px;
     border-radius: 100%;
     box-shadow: 4.0px 8.0px 8.0px rgba(0,0,0,0.38);
 }
 
-.testimonial__bubble {
+.career__bubble {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: rgba(13, 38, 76, 0.19) 0px 9px 20px;
 }
 
-.testimonial__bubble__name {
+.career__bubble__name {
     color: var(--color-accent);
     font-weight: bold;
     filter: brightness(70%);
@@ -481,9 +523,25 @@ order는 0부터 시작하므로 1번째로 만들면 오른쪽으로 배치됨.
 
 /* Footer */
 #Contact {
+    position: relative;
     background-color: var(--color-primary);
     color: var(--color-text);
 }
+
+#contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 1.3px);
+    height: 60px;
+    overflow: hidden;
+    line-height: 0;
+    background-color: var(--color-white);
+    mask: var(--divider-arrow);
+    -webkit-mask: var(--divider-arrow);
+  }
+
 
 .contact__links {
     display: flex;
@@ -495,6 +553,7 @@ order는 0부터 시작하므로 1번째로 만들면 오른쪽으로 배치됨.
 
 .contact__link {
     transition: color 200ms ease-in;
+    color: var(--color-primary)
 }
 
 .contact__link:hover {
@@ -582,11 +641,11 @@ order는 0부터 시작하므로 1번째로 만들면 오른쪽으로 배치됨.
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .testimonial {
+    .career {
         flex-direction: column;
     }
 
-    .testimonial:nth-child(even) .testimonial__img {
+    .career:nth-child(even) .career__img {
         order: 0; 
     }
 
